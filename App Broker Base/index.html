@@ -17,31 +17,20 @@
 </head>
 
 <body id="kendoUiMobileApp">
+    <script src="components/contacto/index.js"></script>
+    <script src="components/oficinas/index.js"></script>
+    <script src="components/asistencia/index.js"></script>
+    <script src="components/pagos/index.js"></script>
+    <script src="components/polizas/index.js"></script>
+    <script src="components/principal/index.js"></script>
     <script src="components/home/index.js"></script>
     <div data-role="layout" data-id="main">
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
+                <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
             </div>
         </header>
-        <footer data-role="footer">
-            <div data-role="tabstrip" id="navigation-container">
-                <a href="components/home/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.home.title"></span></a>
-            </div>
-            <div id="navigation-container-more" style="display: none">
-            </div>
-        </footer>
-    </div>
-
-
-    <div id="navigation-show-more-view" data-role="view" data-title="Show More" data-layout="main">
-        <header data-role="header">
-            <div data-role="navbar">
-                <span data-bind="text: strings._app.showMoreTitle"></span>
-            </div>
-        </header>
-        <ul data-role="listview" data-style="inset" data-click="app.listViewClick">
-        </ul>
     </div>
 
     <div data-role="layout" data-id="main-nonav">
@@ -50,8 +39,23 @@
                 <span data-role="view-title"></span>
             </div>
         </header>
-        <footer data-role="footer">
-        </footer>
+    </div>
+
+    <div id="appDrawer" data-role="drawer" data-title="Navigation">
+        <header data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+            </div>
+        </header>
+        <ul id="navigation-container" data-role="listview">
+            <li><a href="components/home/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.home.title"></span></a></li>
+            <li><a href="components/principal/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.principal.title"></span></a></li>
+            <li><a href="components/polizas/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.polizas.title"></span></a></li>
+            <li><a href="components/pagos/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.pagos.title"></span></a></li>
+            <li><a href="components/asistencia/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.asistencia.title"></span></a></li>
+            <li><a href="components/oficinas/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.oficinas.title"></span></a></li>
+            <li><a href="components/contacto/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.contacto.title"></span></a></li>
+        </ul>
     </div>
     <div id="notify" class="notify-pop-up">
         <span class="notify-pop-up__content"></span>

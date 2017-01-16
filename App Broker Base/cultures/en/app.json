@@ -5,6 +5,34 @@
     "qrCodeScan": "Scan"
   },
   "home": {
-    "title": "Home View"
+    "title": "Broker Demo",
+    "homeModel": {
+      "submitButton": "Confirm",
+      "cancelButton": "Cancel",
+      "editableListForm": {
+        "dni": {
+          "title": "DNI",
+          "placeholder": "**********"
+        }
+      }
+    }
+  },
+  "principal": {
+    "title": "Menu Principal"
+  },
+  "polizas": {
+    "title": "Mis Polizas"
+  },
+  "pagos": {
+    "title": "Pagos Pendientes"
+  },
+  "asistencia": {
+    "title": "Solicitar Asistencia"
+  },
+  "oficinas": {
+    "title": "Oficinas"
+  },
+  "contacto": {
+    "title": "Contactos"
   }
 }
