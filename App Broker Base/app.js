@@ -19,7 +19,8 @@
         $(function() {
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 skin: 'flat',
-                initial: 'components/home/view.html'
+                //initial: 'components/home/view.html'
+                initial: 'components/asistencia/view.html'
             });
 
             kendo.bind($('.navigation-link-text'), app.navigation.viewModel);
@@ -198,6 +199,27 @@
     localization.set('currentCulture', localization.defaultCulture);
 })(window.app);
 /// end app modules
+
+
+    var WServ = "";
+    WServ = "http://addserver.ddns.net/BrokerUp-Movil-Service/BrokerUpMovil.svc/";
+    
+    function MakeCall(numero) {
+        //Handle to Cordoba lib
+        window.open('tel:' + numero, '_system')
+    }
+
+    function closeModal(modal) {
+        // $("#" + modal + " .primary.km-widget.km-button").removeAttr("onclick");
+        $("#" + modal).kendoMobileModalView("close");
+    }
+
+    function openModal(modal) {
+        var mv = $("#" + modal).data("kendoMobileModalView");
+        mv.shim.popup.options.animation.open.effects = "zoom";
+        mv.open();
+        // setTimeout($("#" + modal + " .primary.km-widget.km-button").attr("onclick", "closeModal('" + modal + "')"), 1500);
+    }
 
 // START_CUSTOM_CODE_kendoUiMobileApp
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes

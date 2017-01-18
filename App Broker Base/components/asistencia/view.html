@@ -1,17 +1,17 @@
-<div data-role="view" data-title="View" data-layout="main" data-model="app.asistencia" data-show="app.asistencia.onShow" data-after-show="app.asistencia.afterShow" id="asistenciaScreen" class="screen">
-    <header data-role="header">
-        <div data-role="navbar" class="header-text">
+    <div data-role="view" data-title="View" data-layout="main" data-model="app.asistencia.addItemViewModel" data-show="app.asistencia.onShow" data-after-show="app.asistencia.afterShow" id="asistenciaScreen" class="screen">
+        <header data-role="header">
+            <div data-role="navbar" class="header-text">  
+                <span>Asistencia</span> 
+                <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+            </div>
+        </header>
 
-            <span data-bind="text: strings.asistencia.title"></span>
-
-            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
-
+        <div id="mapa-principal" class="form-view">
+            <div id="divmap"></div>
+            <div id="map"></div>
+            <a id="setLatLong" data-role="button" data-bind="events: { click: setLatLong }">Solicitar Asistencia</a>
+            <!-- START_CUSTOM_CODE_editableListForm2 -->
+            <!-- END_CUSTOM_CODE_editableListForm2 --> 
         </div>
-    </header>
 
-
-    <!-- START_CUSTOM_CODE_asistencia -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
-    <!-- END_CUSTOM_CODE_asistencia -->
-</div>
+    </div>

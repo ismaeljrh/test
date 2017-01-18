@@ -1,17 +1,121 @@
-<div data-role="view" data-title="View" data-layout="main" data-model="app.polizas" data-show="app.polizas.onShow" data-after-show="app.polizas.afterShow" id="polizasScreen" class="screen">
-    <header data-role="header">
-        <div data-role="navbar" class="header-text">
+    <!-- Listado Polizas -->
+    <div id="polizasScreen" data-role="view" data-title="View" data-layout="main" data-model="app.polizas" data-show="app.polizas.onShow" data-after-show="app.polizas.afterShow"  class="screen">
+        <header data-role="header">
+            <div data-role="navbar" class="header-text">
 
-            <span data-bind="text: strings.polizas.title"></span>
+                <span data-bind="text: strings.polizas.title"></span>
 
-            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+                <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
 
+            </div>
+        </header> 
+
+        <div id="listado-polizas"> 
         </div>
-    </header>
 
+    </div>
 
-    <!-- START_CUSTOM_CODE_polizas -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <!-- Detalle Polizas -->
+    <div id="detallePoliza" data-role="view" data-title="Detalle Póliza" data-layout="main" data-model="app.polizas"  class="screen"> 
+        <header data-role="header">
+            <div data-role="navbar" class="header-text">
+                <span>Detalle Póliza</span> 
+                <a id="backbutton" data-role="backbutton" data-align="left" style="background-color: #EF7A1D;"><i class="fa fa-undo" aria-hidden="true"></i></a>
+            </div>
+        </header>
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">  
+                <li class="form-content-item">  
+                    <label id="documentTypeField" class="field field--text">
+                        <span class="field__label">Agencia</span> 
+                        <input id="Agencia" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item">  
+                    <label id="documentTypeField" class="field field--text">
+                        <span class="field__label">Aseguradora</span> 
+                        <input id="AseguradoraNombre" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="documentNumberField" class="field field--text">
+                        <span class="field__label">Contratante</span> 
+                        <input id="Contratante" type="text"> 
+                    </label>
+                </li> 
+                <li class="form-content-item"> 
+                    <label id="emailField" class="field field--text">
+                        <span class="field__label">Estado</span> 
+                        <input id="Estado" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="firstNameField" class="field field--text">
+                        <span class="field__label">Fecha Emisión</span> 
+                        <input id="FechaEmision" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="middleNameField" class="field field--text">
+                        <span class="field__label">Materia Seguro</span> 
+                        <input id="MateriaSeguro" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="lastNameField" class="field field--text">
+                        <span class="field__label">Moneda</span> 
+                        <input id="Moneda" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="lastName2Field" class="field field--text">
+                        <span class="field__label">Nro. Colocación</span> 
+                        <input id="NroColocacion" type="text"> 
+                    </label>
+                </li> 
+                <li class="form-content-item"> 
+                    <label id="userField" class="field field--text">
+                        <span class="field__label">Nro. Póliza</span> 
+                        <input id="NroPoliza" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="workPhoneField" class="field field--text">
+                        <span class="field__label">Nro. Renovación</span> 
+                        <input id="NroRenovacion" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="PorcentajeField" class="field field--text">
+                        <span class="field__label">Porcentaje</span> 
+                        <input id="Porcentaje" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="RamoField" class="field field--text">
+                        <span class="field__label">Ramo</span> 
+                        <input id="Ramo" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="UnidadNegocioField" class="field field--text">
+                        <span class="field__label">Unidad Negocio</span> 
+                        <input id="UnidadNegocio" type="text"> 
+                    </label>
+                </li> 
+                <li class="form-content-item"> 
+                    <label id="vigenciaInicialField" class="field field--text">
+                        <span class="field__label">Vigencia Inicial</span> 
+                        <input id="vigenciaInicial" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="vigenciaFinalField" class="field field--text">
+                        <span class="field__label">Vigencia Final</span> 
+                        <input id="vigenciaFinal" type="text"> 
+                    </label>
+                </li> 
+            </ul> 
+        </form> 
 
-    <!-- END_CUSTOM_CODE_polizas -->
-</div>
+    </div>

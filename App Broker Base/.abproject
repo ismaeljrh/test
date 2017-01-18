@@ -4,7 +4,7 @@
   "projectVersion": 1,
   "AppIdentifier": "com.telerik.AppBrokerBase",
   "DisplayName": "App Broker Base",
-  "Author": "",
+  "Author": "Valmar Group",
   "Description": "App Broker Base",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
@@ -14,7 +14,7 @@
   ],
   "iOSBackgroundMode": [],
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
-  "FrameworkVersion": "4.0.0",
+  "FrameworkVersion": "5.0.0",
   "AndroidPermissions": [
     "android.permission.INTERNET"
   ],

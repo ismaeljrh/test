@@ -10,9 +10,17 @@
     <link href="styles/overrides.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
 
+    <link href="styles/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="mapa/leaflet.css">
+
     <script src="cordova.js"></script>
-    <script src="kendo/js/jquery.min.js"></script>
-    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="kendo/js/jquery.min.js"></script> 
+
+    <script src="mapa/leaflet.js"></script>
+
+    <!--script src="kendo/js/kendo.mobile.min.js"></script-->
+    <script src="http://kendo.cdn.telerik.com/2016.3.1028/js/kendo.all.min.js"></script>
+
     <script src="app.js"></script>
 </head>
 
@@ -24,6 +32,11 @@
     <script src="components/polizas/index.js"></script>
     <script src="components/principal/index.js"></script>
     <script src="components/home/index.js"></script>
+
+    <input type="hidden" id="LoginID" value=""/>
+    <input type="hidden" id="LoginDNI" value=""/>
+
+
     <div data-role="layout" data-id="main">
         <header data-role="header">
             <div data-role="navbar">
@@ -41,20 +54,61 @@
         </header>
     </div>
 
-    <div id="appDrawer" data-role="drawer" data-title="Navigation">
+    <div id="appDrawer" data-role="drawer" data-title="App Broker" data-swipe-to-open-views='["principalScreen","polizasScreen", "pagosScreen", "oficinasScreen", "contactoScreen"]'>
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
             </div>
         </header>
         <ul id="navigation-container" data-role="listview">
-            <li><a href="components/home/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.home.title"></span></a></li>
-            <li><a href="components/principal/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.principal.title"></span></a></li>
-            <li><a href="components/polizas/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.polizas.title"></span></a></li>
-            <li><a href="components/pagos/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.pagos.title"></span></a></li>
-            <li><a href="components/asistencia/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.asistencia.title"></span></a></li>
-            <li><a href="components/oficinas/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.oficinas.title"></span></a></li>
-            <li><a href="components/contacto/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.contacto.title"></span></a></li>
+            <li id="fun00" style="display:block;">
+                <a href="components/home/view.html">
+                <i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
+                <span class="navigation-link-text">Iniciar Sesión</span>
+                </a>
+            </li>
+            <li id="fun01" style="display:none;">
+                <a href="components/principal/view.html">
+                <i class="fa fa-home" aria-hidden="true"></i>&nbsp;
+                <span class="navigation-link-text" data-bind="text: strings.principal.title"></span>
+                </a>
+            </li>
+            <li id="fun02" style="display:none;">
+                <a href="components/polizas/view.html">
+                <i class="fa fa-book" aria-hidden="true"></i>&nbsp;
+                <span class="navigation-link-text" data-bind="text: strings.polizas.title"></span>
+                </a>
+            </li>
+            <li id="fun03" style="display:none;">
+                <a href="components/pagos/view.html">
+                <i class="fa fa-money" aria-hidden="true"></i>&nbsp;
+                <span class="navigation-link-text" data-bind="text: strings.pagos.title"></span>
+                </a>
+            </li>
+            <li id="fun04" style="display:none;">
+                <a href="components/asistencia/view.html">
+                <i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;
+                <span class="navigation-link-text" data-bind="text: strings.asistencia.title"></span>
+                </a>
+            </li>
+            <li id="fun05" style="display:none;">
+                <a href="components/oficinas/view.html">
+                <i class="fa fa-building" aria-hidden="true"></i>&nbsp;
+                <span class="navigation-link-text" data-bind="text: strings.oficinas.title"></span>
+                </a>
+            </li>
+            <li id="fun06" style="display:none;">
+                <a href="components/contacto/view.html">
+                <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;
+                <span class="navigation-link-text" data-bind="text: strings.contacto.title"></span>
+                </a>
+            </li>
+            <li id="fun07" style="display:none;">
+                <a onclick="mostrarmenu(2);">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;
+                <span class="navigation-link-text">Cerrar Sesión</span>
+                </a>
+            </li>
         </ul>
     </div>
     <div id="notify" class="notify-pop-up">

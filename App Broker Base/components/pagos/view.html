@@ -1,17 +1,109 @@
-<div data-role="view" data-title="View" data-layout="main" data-model="app.pagos" data-show="app.pagos.onShow" data-after-show="app.pagos.afterShow" id="pagosScreen" class="screen">
-    <header data-role="header">
-        <div data-role="navbar" class="header-text">
+    <!-- Listado Primas -->
+    <div data-role="view" data-title="View" data-layout="main" data-model="app.pagos" data-show="app.pagos.onShow" data-after-show="app.pagos.afterShow" id="pagosScreen" class="screen">
+        <header data-role="header">
+            <div data-role="navbar" class="header-text">
 
-            <span data-bind="text: strings.pagos.title"></span>
+                <span data-bind="text: strings.pagos.title"></span>
 
-            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+                <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
 
+            </div>
+        </header>
+
+        <div id="listado-primas"> 
         </div>
-    </header>
 
+    </div>
 
-    <!-- START_CUSTOM_CODE_pagos -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <!-- Detalle Primas -->  
+    <div id="detallePrima" data-role="view" data-title="Detalle Póliza" data-layout="main" data-model="app.pagos"  class="screen"> 
+        <header data-role="header">
+            <div data-role="navbar" class="header-text">
+                <span>Detalle Pago</span> 
+                <a id="backbutton" data-role="backbutton" data-align="left" style="background-color: #EF7A1D;"><i class="fa fa-undo" aria-hidden="true"></i></a>
+            </div>
+        </header>
+        <form>  
+            <ul class="form-content" data-role="listview" data-style="inset">  
+                <li class="form-content-item">  
+                    <label id="documentTypeField" class="field field--text">
+                        <span class="field__label">Aseguradora</span> 
+                        <input id="Aseguradora" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item">  
+                    <label id="documentTypeField" class="field field--text">
+                        <span class="field__label">Cliente</span> 
+                        <input id="Cliente" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="documentNumberField" class="field field--text">
+                        <span class="field__label">Fecha Emision</span> 
+                        <input id="FechaEmision" type="text"> 
+                    </label>
+                </li> 
+                <li class="form-content-item"> 
+                    <label id="emailField" class="field field--text">
+                        <span class="field__label">Status</span> 
+                        <input id="NombreStatus" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="firstNameField" class="field field--text">
+                        <span class="field__label">Nro Documento</span> 
+                        <input id="NroDocumento" type="text"> 
+                    </label>
+                </li> 
+                <li class="form-content-item"> 
+                    <label id="middleNameField" class="field field--text">
+                        <span class="field__label">Poliza</span> 
+                        <input id="Poliza" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="lastNameField" class="field field--text">
+                        <span class="field__label">Prima Neta</span> 
+                        <input id="PrimaNeta" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="lastName2Field" class="field field--text">
+                        <span class="field__label">Prima Total</span> 
+                        <input id="PrimaTotal" type="text"> 
+                    </label>
+                </li> 
+                <li class="form-content-item"> 
+                    <label id="userField" class="field field--text">
+                        <span class="field__label">Producto</span> 
+                        <input id="Producto" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="workPhoneField" class="field field--text">
+                        <span class="field__label">Ramo</span> 
+                        <input id="Ramo" type="text"> 
+                    </label>
+                </li> 
+                <li class="form-content-item"> 
+                    <label id="PorcentajeField" class="field field--text">
+                        <span class="field__label">Tipo Documento</span> 
+                        <input id="TipoDocumento" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="RamoField" class="field field--text">
+                        <span class="field__label">Vigencia Final</span> 
+                        <input id="VigenciaFinal" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="UnidadNegocioField" class="field field--text">
+                        <span class="field__label">Vigencia Inicial</span> 
+                        <input id="VigenciaInicial" type="text"> 
+                    </label>
+                </li>  
+            </ul> 
+        </form> 
 
-    <!-- END_CUSTOM_CODE_pagos -->
-</div>
+    </div>
