@@ -2,10 +2,10 @@
   "ProjectName": "App Broker Base",
   "ProjectGuid": "371f5cc8-f132-4b1f-bafc-54ac796595cf",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.AppBrokerBase",
-  "DisplayName": "App Broker Base",
+  "AppIdentifier": "com.valmar.appseguros",
+  "DisplayName": "Seguros La Positiva",
   "Author": "Valmar Group",
-  "Description": "App Broker Base",
+  "Description": "Seguros La Positiva",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
@@ -19,8 +19,7 @@
     "android.permission.INTERNET"
   ],
   "DeviceOrientations": [
-    "Portrait",
-    "Landscape"
+    "Portrait"
   ],
   "AndroidHardwareAcceleration": "true",
   "iOSStatusBarStyle": "Default",

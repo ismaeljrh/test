@@ -26,43 +26,51 @@
                     console.log(item.NroPoliza);
                     */ 
                     
-                    var Aseguradora = "'"+item.Aseguradora+"'";
-                    var Cliente = "'"+item.Cliente+"'";
-                    var NombreStatus = "'"+item.NombreStatus+"'";
-                    var NroDocumento = "'"+item.NroDocumento+"'";
-                    var Poliza = "'"+item.Poliza+"'";
-                    var PrimaNeta = "'"+item.PrimaNeta+"'";
-                    var PrimaTotal = "'"+item.PrimaTotal+"'";
-                    var Producto = "'"+item.Producto+"'";
-                    var Ramo = "'"+item.Ramo+"'";
-                    var SimboloMoneda = "'"+item.SimboloMoneda+"'";
-                    var TipoDocumento = "'"+item.TipoDocumento+"'";
-                    
-                    var VigenciaInicial = "'"+item.VigenciaInicial+"'";
-                    //VigenciaInicial = VigenciaInicial.replace("\\","");
-
-                    var VigenciaFinal = "'"+item.VigenciaFinal+"'";
+                    var NroDocumento = item.NroDocumento;
+                    var Poliza = item.Poliza;
+                    var Aseguradora = item.Aseguradora;
+                    var Ramo = item.Ramo;
+                    var SimboloMoneda = item.SimboloMoneda;
+                    var PrimaTotal = item.PrimaTotal;
+                    var VigenciaInicial = item.VigenciaInicial;
+                    //VigenciaInicial = VigenciaInicial.replace("\\",""); 
+                    var VigenciaFinal = item.VigenciaFinal;
                     //VigenciaFinal = VigenciaFinal.replace("\\",""); 
+                    var NombreStatus = item.NombreStatus;
 
-                    var FechaEmision = "'"+item.FechaEmision+"'";
+                    /*
+                    var Cliente = item.Cliente; 
+                    var PrimaNeta = item.PrimaNeta; 
+                    var Producto = item.Producto; 
+                    var TipoDocumento = item.TipoDocumento; 
+                    var FechaEmision = item.FechaEmision;
                     //FechaEmision = FechaEmision.replace("\\","");
+                    */
+                    var bkcolor;
+                    if (NombreStatus == "Pendiente Pago"){
+                        bkcolor = "red";
+                    }else{
+                        bkcolor = "green";
+                    }
 
                     var color = "";
                     if (cont==1){
                         color= "white;";
                         cont=2;
-                    }else{
-                        color= "rgba(206, 228, 230, 0.53);";
+                    }else{ 
+                        color= "rgba(206, 211, 230, 0.53);";
                         cont=1;
                     } 
+                    
+                    /* '" onclick="DetallePG('+ Aseguradora +', '+ Cliente +', '+ FechaEmision +', '+ NombreStatus +', '+ NroDocumento +', '+ Poliza +', ' + PrimaNeta +', '+  */
 
-                    $("#listado-primas").append('<li id="GrupoLI" style="background-color:'+ color +
-                                            '" onclick="DetallePG('+ Aseguradora +', '+ Cliente +', '+ FechaEmision +', '+ NombreStatus +', '+ NroDocumento +', '+ Poliza +', ' + PrimaNeta +', '+ 
-                                            PrimaTotal +', '+ Producto +', '+ Ramo +', '+ SimboloMoneda +', '+ TipoDocumento +', '+ VigenciaFinal +', '+ VigenciaInicial + ' )"><span id="etiqueta"></span>'+ 
-                                            '<span style="margin-left: 0.5em; margin-top: 0.5em;"> <i class="fa fa-user" aria-hidden="true"></i> &nbsp;&nbsp;'+ Cliente +'</span>'+
-                                            '<span style="margin-left: 0.5em;"> <i class="fa fa-shield" aria-hidden="true"></i> &nbsp;&nbsp;'+ Aseguradora +'</span>'+ 
-                                            '<span style="margin-left: 0.5em;"> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp;'+ NombreStatus +'</span>'+
-                                            '<span style="margin-left: 0.5em;"> <i class="fa fa-area-chart" aria-hidden="true"></i> &nbsp;'+ FechaEmision +'</span></li>');
+                    $("#listado-primas").append('<li id="GrupoLI" style="background-color:'+ color + '" ><span id="etiqueta"></span>'+ 
+                                            '<span style="margin-left: 0.5em; margin-top: 0.5em;"> <b>Documento: </b> &nbsp;'+ NroDocumento +'</span>'+
+                                            '<span style="margin-left: 0.5em;"> <b>Póliza: </b> &nbsp;'+ Poliza +'</span>'+ 
+                                            '<span style="margin-left: 0.5em;"> <b>Aseguradora: </b> &nbsp;'+ Aseguradora +'</span>'+
+                                            '<span style="margin-left: 0.5em;"> <b>Ramo: </b> &nbsp;'+ Ramo +'</span>'+
+                                            '<span style="margin-left: 0.5em;"> <b>Prima Total: </b> &nbsp;'+ SimboloMoneda +' '+ PrimaTotal +'</span>'+
+                                            '<span style="margin-left: 0.5em;  width:75% !important;"> <b>Vencimiento: </b> &nbsp;'+ VigenciaFinal +'</span> <span style="background-color:'+ bkcolor +'; width: 5% !important; height: 1em !important; border-radius: 1em !important;" ></span></li>');
                 });
 
                 //console.log(JSON.stringify(data)); 
@@ -76,6 +84,7 @@
         });   
     }
 
+    /*
     function DetallePG(Aseguradora, Cliente, FechaEmision, NombreStatus, NroDocumento, Poliza, PrimaNeta, PrimaTotal, Producto, Ramo, SimboloMoneda, TipoDocumento, VigenciaFinal, VigenciaInicial){
         window.location.href = "#detallePrima"; 
 
@@ -94,8 +103,5 @@
         $("#VigenciaInicial").val(VigenciaInicial);
 
     }
-
-    // START_CUSTOM_CODE_pagos
-    // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes 
+    */
     
-    // END_CUSTOM_CODE_pagos

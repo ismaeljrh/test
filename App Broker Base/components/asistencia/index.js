@@ -1,10 +1,10 @@
-    'use strict';
 
+    'use strict'; 
     app.asistencia = kendo.observable({
         onShow: function(e) {
             navigator.geolocation.getCurrentPosition(function (position) {
-                var miLatLong = [parseFloat(position.coords.latitude), parseFloat(position.coords.longitude)];
-                console.log("Mi Ubicacion Actual: "+miLatLong);
+                miLatLong = [parseFloat(position.coords.latitude), parseFloat(position.coords.longitude)];
+                //console.log("Mi Ubicacion Actual: "+miLatLong);
                 if (miLatLong.length > 0) {
                     // Reset the form data.
                     $("#formAddSiniestro").css("display", "none");
@@ -20,7 +20,7 @@
 
                     //var L;
                     if (miLatLong.length > 0) {
-                        console.log("1");
+                        //console.log("1");
                         var map = L.map('map').setView(miLatLong, 18);
                         //var map = L.map('map').setView([51.505, -0.09], 13);
                     } else {
@@ -55,50 +55,8 @@
                         var miLongitud = latlong.substring(latlong.indexOf(",") + 1, latlong.length);
                         $("#latitud").val(miLatitud);
                         $("#longitud").val(miLongitud);
-                    });
+                    }); 
 
-                    //cargamos ds tipo 
-                    /*
-                    var dsTipos = app.tipos.tiposModel.dataSource;
-                    dsTipos.fetch(function () {
-                        var htmlBrooker = [];
-                        var htmlAseguradora = [];
-                        var htmlAseguradora2 = [];
-                        var data = dsTipos.data();
-                        for (var i = 0; i < data.length; i++) {
-                            //console.log(data[i].Id + " - " + data[i].categoria + " - " + data[i].nombre);
-                            if(data[i].categoria == "Brooker"){ 
-                                htmlBrooker.push('<option value="' + data[i].Id + '" categoria="' + data[i].categoria + '" >' + data[i].nombre + '</option>');    
-                            }else if(data[i].categoria == "Aseguradora"){
-                                htmlAseguradora.push('<option value="' + data[i].Id + '" categoria="' + data[i].categoria + '" >' + data[i].nombre + '</option>');
-                            }else{ 
-                                htmlAseguradora2.push('<option value="' + data[i].Id + '" categoria="' + data[i].categoria + '" >' + data[i].nombre + '</option>');
-                            }
-                            
-                        }
-                        $("#tipoBrooker").html(htmlBrooker);
-                        $("#tipoAseguradora").html(htmlAseguradora);
-                        $("#tipoAseguradora2").html(htmlAseguradora2);
-                    });
-                    //cargamos ds vehiculo 
-                    if (localStorage.getItem("placasAsignadas") != undefined) {
-                        var placasGuardadas = JSON.parse(localStorage.getItem('placasAsignadas'));
-                        var html = [];
-                        for (var i = 0; i < placasGuardadas.length; i++) {
-                            html.push('<option value="' + placasGuardadas[i].Id + '" vip="' + placasGuardadas[i].vip + '" brooker="' + placasGuardadas[i].brooker + '" aseguradora="' + placasGuardadas[i].aseguradora + '">' + placasGuardadas[i].placa + " - " + placasGuardadas[i].marca +  '</option>');
-                        }
-                        $("#vehiculo").html(html);
-                    }
-                    */
-                    // var dsVehiculo = app.vehiculo.vehiculoModel.dataSource;
-                    // dsVehiculo.fetch(function () {
-                    //     var html = [];
-                    //     var data = dsVehiculo.data();
-                    //     for (var i = 0; i < data.length; i++) {
-                    //         html.push('<option value="' + data[i].Id + '" vip="' + data[i].vip + '" brooker="' + data[i].brooker + '" aseguradora="' + data[i].aseguradora + '">' + data[i].placa + '</option>');
-                    //     }
-                    //     $("#vehiculo").html(html);
-                    // });
                 } else {
                     alert("Error");
                 }
@@ -124,7 +82,90 @@
         afterShow: function() {}
     }); 
 
-    // START_CUSTOM_CODE_asistencia
-    // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
- 
-    // END_CUSTOM_CODE_asistencia
+    function changeTipoAsistencia(value){
+        /* 
+        <option value="1">Accidente</option>
+        <option value="2">Asistencia Mecánica</option>
+        <option value="3">Chofer Reemplazo</option>
+        */
+        //console.log(value);
+        switch(value){
+            case "1":
+                //console.log("1");
+                $('#tipoDetalle')
+                    .empty()
+                    .append('<option selected="selected" value="Accidente con lesiones">Accidente con lesiones</option>')
+                ; 
+                $("#tipoDetalle").append('<option value="Atropello">Atropello</option>');
+                $("#tipoDetalle").append('<option value="Choque">Choque</option>');
+                $("#tipoDetalle").append('<option value="Robo parcial">Robo parcial</option>');
+                $("#tipoDetalle").append('<option value="Robo total">Robo total</option>');
+            break;
+            case "2":
+                //console.log("2");
+                $('#tipoDetalle')
+                    .empty()
+                    .append('<option selected="selected" value="Grúa">Grúa</option>')
+                ; 
+                $("#tipoDetalle").append('<option value="Auxilio Mecánico">Auxilio Mecánico</option>');
+            break;
+            case "3":
+                //console.log("3");
+                $('#tipoDetalle')
+                    .empty()
+                    .append('<option selected="selected" value="Solicitar Chofer">Solicitar Chofer</option>')
+                ;  
+            break;
+        }
+    }
+
+    function ConfirmarAsistencia(){
+
+        window.location.href = "#detalleAsistencia"; 
+
+        $("#Asegurado").val($("#LoginNombre").val());
+        $("#AseguradoraNombreAsistencia").val("La Positiva"); 
+
+        var IdVehiculo = $('select#vehiculo').val();
+        //console.log(IdVehiculo);
+
+        switch(IdVehiculo){ 
+            case "1": 
+                $("#VehiculoValor").val("Volvo S60");
+                $("#PlacaValor").val("AAL095");
+            break;
+            case "2":
+                $("#VehiculoValor").val("Honda Accord");
+                $("#PlacaValor").val("F1W542");
+            break;
+            case "3":
+                $("#VehiculoValor").val("Toyota RAV");
+                $("#PlacaValor").val("AQL973");
+            break;
+        }
+
+        var IdTipoAsistencia = $('select#tipoAsistencia').val();
+        //console.log(IdTipoAsistencia);
+
+        switch(IdTipoAsistencia){
+            case "1": 
+                $("#AsistenciaValor").val("Accidente");
+            break;
+            case "2":
+                $("#AsistenciaValor").val("Asistencia Mecánica");
+            break;
+            case "3":
+                $("#AsistenciaValor").val("Chofer Reemplazo");
+            break;
+        } 
+
+        var IdTipoDetalle = $('select#tipoDetalle').val();
+        //console.log(IdTipoDetalle);
+        $("#TipoValor").val(IdTipoDetalle);
+
+        //$("#ubicacion").val($('#latitud').val()+","+$('#longitud').val());
+
+        $("#LlamadaField").html('<span onclick="MakeCall(970005515);" class="btn-llamar"><i class="fa fa-phone" aria-hidden="true"></i> <b>Llamar</b></span>');
+
+    }
+    

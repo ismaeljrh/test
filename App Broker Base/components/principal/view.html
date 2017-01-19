@@ -1,17 +1,24 @@
 <div data-role="view" data-title="View" data-layout="main" data-model="app.principal" data-show="app.principal.onShow" data-after-show="app.principal.afterShow" id="principalScreen" class="screen">
     <header data-role="header">
-        <div data-role="navbar" class="header-text">
-
-            <span data-bind="text: strings.principal.title"></span>
-
-            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
-
+        <div data-role="navbar" class="header-text cabeceras-principales"> 
+            <span>Home</span> 
+            <a data-role="button" href="#appDrawer" class="btn-navegacion" data-rel="drawer" data-align="left" data-icon="drawer-button"></a> 
         </div>
     </header>
 
+    <div class="cabecera-menu">
+        <img src="styles/LogoLaPositivaInterno.png" alt="">
+    </div>
+    <div class="cabecera-cuerpo">
+        <div> <span class="spanLogo" onclick="redireccion(1);">
+            <i class="fa fa-suitcase i-logo-menu" aria-hidden="true"></i></span> <span class="spanTxt">Mis Pólizas</span></div>
+        <div> <span class="spanLogo" onclick="redireccion(2);">
+            <i class="fa fa-money i-logo-menu" aria-hidden="true"></i></span> <span class="spanTxt">Pagos Pendientes</span></div> 
+        <div> <span class="spanLogo" onclick="redireccion(3);">
+            <i class="fa fa-wrench i-logo-menu" aria-hidden="true"></i></span> <span class="spanTxt">Asistencia</span></div> 
+        <div> <span class="spanLogo" onclick="redireccion(4);">
+            <i class="fa fa-building i-logo-menu" aria-hidden="true"></i></span> <span class="spanTxt">Oficinas</span></div>  
+    </div>
 
-    <!-- START_CUSTOM_CODE_principal -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
 
-    <!-- END_CUSTOM_CODE_principal -->
 </div>

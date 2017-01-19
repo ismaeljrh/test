@@ -1,8 +1,9 @@
-    <div data-role="view" data-title="View" data-layout="main" data-model="app.asistencia.addItemViewModel" data-show="app.asistencia.onShow" data-after-show="app.asistencia.afterShow" id="asistenciaScreen" class="screen">
+    <!-- Mapa Principal Asistencia -->
+    <div data-role="view" data-title="View" data-layout="main" data-model="app.asistencia" data-show="app.asistencia.onShow" data-after-show="app.asistencia.afterShow" id="asistenciaScreen" class="screen">
         <header data-role="header">
-            <div data-role="navbar" class="header-text">  
+            <div data-role="navbar" class="header-text cabeceras-principales">  
                 <span>Asistencia</span> 
-                <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+                <a data-role="button" href="#appDrawer" class="btn-navegacion" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
             </div>
         </header>
 
@@ -14,4 +15,138 @@
             <!-- END_CUSTOM_CODE_editableListForm2 --> 
         </div>
 
+    </div>
+
+    <!-- Modal de Asistencia -->
+    <div data-role="modalview" data-model="app.asistencia" id="modalview-alert-home" data-modal="false">
+    <!--     <div data-role="header">
+            <div data-role="navbar">
+                <span>Confirmar el vehículo</span>
+            </div>
+        </div>
+        <ul data-role="listview" data-style="inset">
+            <li id="contentAlertHome" class="form-content-item" style="text-align: center;"></li>
+        </ul> -->
+        <form id="formAddSiniestro">
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li class="form-content-item">
+                    <label class="km-label-above">
+                            <span style="color:#4c5356">Seleccione el vehículo</span>
+                            <div class="styled-select blue semi-square">
+                                <select id="vehiculo">
+                                    <option value="1">AAL095-Volvo S60</option>
+                                    <option value="2">F1W542-Honda Accord</option>
+                                    <option value="3">AQL973-Toyota RAV</option>
+                                </select>
+                            </div>
+                        </label>
+                </li>
+                <li class="form-content-item">
+                    <label class="km-label-above">
+                            <span style="color:#4c5356">Asistencia Mecánica/Grúa</span> 
+                            <div class="styled-select blue semi-square">
+                                <select id="tipoAsistencia" onchange="changeTipoAsistencia(this.value);">
+                                    <option value="1">Accidente</option>
+                                    <option value="2">Asistencia Mecánica</option>
+                                    <option value="3">Chofer Reemplazo</option>
+                                </select>
+                            </div>
+                        </label>
+                </li>
+                <li class="form-content-item" id="tipoBrookerLi">
+                    <label class="km-label-above">
+                            <span style="color:#4c5356">Tipo</span> 
+                            <div class="styled-select blue semi-square">
+                                <select id="tipoDetalle">
+                                    <option selected="selected" value="Accidente con lesiones">Accidente con lesiones</option>
+                                    <option value="Atropello">Atropello</option>
+                                    <option value="Choque">Choque</option>
+                                    <option value="Robo parcial">Robo parcial</option>
+                                    <option value="Robo total">Robo total</option>
+                                </select>
+                            </div>
+                        </label>
+                </li> 
+
+                <li class="form-content-item" style="display:none;">
+                    <label class="km-label-above">
+    
+                            <span>Latitud</span>
+
+                            <input id="latitud"  placeholder="Latitud" type="text">
+                        </label>
+                </li>
+                <li class="form-content-item" style="display:none;">
+                    <label class="km-label-above"> 
+                            <span>Longitud</span>  
+                            <input id="longitud" placeholder="Longitud" type="text">
+                        </label>
+                </li>
+                </br>
+                <a data-role="button" style="display: block; background: #dc3d03 !important; border-color: #dc3d03 !important; color: #ffffff !important;" onclick="ConfirmarAsistencia()">Confirmar Asistencia</a>
+            </ul>
+        </form>
+    </div>
+
+    <!-- Detalle Asistencia -->
+    <div data-role="view" data-title="View" data-layout="main" data-model="app.asistencia" id="detalleAsistencia" class="screen">
+        <header data-role="header">
+            <div data-role="navbar" class="header-text cabeceras-principales">  
+                <span>Confirmación de Asistencia</span> 
+                <a data-role="button" href="#appDrawer" class="btn-navegacion" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+            </div>
+        </header> 
+
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">  
+                <li class="form-content-item"> 
+                    <label id="userField" class="field field--text">
+                        <span class="field__label"><b>Asegurado</b></span>   
+                        <textarea name="Contratante" id="Asegurado" cols="10" rows="3"></textarea>
+                    </label>
+                </li>
+                <li class="form-content-item">  
+                    <label id="documentTypeField" class="field field--text">
+                        <span class="field__label"><b>Aseguradora</b></span>  
+                        <input readonly="true" id="AseguradoraNombreAsistencia" type="text" value="La Positiva"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="VehiculoField" class="field field--text">
+                        <span class="field__label"><b>Vehículo</b></span>  
+                        <input readonly="true" id="VehiculoValor" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="PlacaField" class="field field--text">
+                        <span class="field__label"><b>Placa</b></span>  
+                        <input readonly="true" id="PlacaValor" type="text"> 
+                    </label>
+                </li>
+                
+                <li class="form-content-item"> 
+                    <label id="AsistenciaField" class="field field--text">
+                        <span class="field__label"><b>Asistencia</b></span>  
+                        <input readonly="true" id="AsistenciaValor" type="text"> 
+                    </label>
+                </li>
+                <li class="form-content-item"> 
+                    <label id="TipoField" class="field field--text">
+                        <span class="field__label"><b>Tipo</b></span>   
+                        <textarea name="Contratante" id="TipoValor" cols="10" rows="3"></textarea>
+                    </label>
+                </li>
+                <!--li class="form-content-item"> 
+                    <label id="UbicacionField" class="field field--text">
+                        <span class="field__label"><b>Ubicación</b></span>  
+                        <input readonly="true" id="ubicacion" type="text"> 
+                    </label>
+                </li-->
+                <li class="form-content-item"> 
+                    <label id="LlamadaField" class="field field--text">
+                        
+                    </label>
+                </li> 
+            </ul> 
+        </form> 
     </div>

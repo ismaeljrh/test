@@ -1,16 +1,12 @@
     <!-- Listado Primas -->
     <div data-role="view" data-title="View" data-layout="main" data-model="app.pagos" data-show="app.pagos.onShow" data-after-show="app.pagos.afterShow" id="pagosScreen" class="screen">
         <header data-role="header">
-            <div data-role="navbar" class="header-text">
-
-                <span data-bind="text: strings.pagos.title"></span>
-
-                <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
-
+            <div data-role="navbar" class="header-text cabeceras-principales"> 
+                <span data-bind="text: strings.pagos.title"></span> 
+                <a data-role="button" href="#appDrawer" class="btn-navegacion" data-rel="drawer" data-align="left" data-icon="drawer-button"></a> 
             </div>
-        </header>
-
-        <div id="listado-primas"> 
+        </header> 
+        <div id="listado-primas" data-role="scroller" data-elastic="false" data-content-height="100%"> 
         </div>
 
     </div>
@@ -18,9 +14,9 @@
     <!-- Detalle Primas -->  
     <div id="detallePrima" data-role="view" data-title="Detalle Póliza" data-layout="main" data-model="app.pagos"  class="screen"> 
         <header data-role="header">
-            <div data-role="navbar" class="header-text">
+            <div data-role="navbar" class="header-text cabeceras-principales">
                 <span>Detalle Pago</span> 
-                <a id="backbutton" data-role="backbutton" data-align="left" style="background-color: #EF7A1D;"><i class="fa fa-undo" aria-hidden="true"></i></a>
+                <a id="backbutton" data-role="backbutton" data-align="left" class="btn-navegacion"><i class="fa fa-undo" aria-hidden="true"></i></a>
             </div>
         </header>
         <form>  

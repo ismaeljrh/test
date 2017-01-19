@@ -1,12 +1,28 @@
-'use strict';
+    'use strict';
 
-app.principal = kendo.observable({
-    onShow: function() {},
-    afterShow: function() {}
-});
-app.localization.registerView('principal');
+    app.principal = kendo.observable({
+        onShow: function() {},
+        afterShow: function() {}
+    });
+    app.localization.registerView('principal');
 
-// START_CUSTOM_CODE_principal
-// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-
-// END_CUSTOM_CODE_principal
+    function redireccion(id){
+        switch(id){
+            case 1:
+                //alert("1");
+                kendo.mobile.application.navigate('components/polizas/view.html');
+            break;
+            case 2:
+                //alert("2");
+                kendo.mobile.application.navigate('components/pagos/view.html');
+            break;
+            case 3:
+                //alert("3");
+                kendo.mobile.application.navigate('components/asistencia/view.html');
+            break;
+            case 4:
+                //alert("4");
+                kendo.mobile.application.navigate('components/oficinas/view.html');
+            break;
+        }
+    }

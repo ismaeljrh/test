@@ -35,15 +35,18 @@
                         color= "white;";
                         cont=2;
                     }else{
-                        color= "rgba(206, 228, 230, 0.53);";
+                        color= "rgba(206, 211, 230, 0.53);";
                         cont=1;
                     }
 
                     $("#listado-polizas").append('<li id="GrupoLI" style="background-color:'+ color +'" onclick="DetallePL(\''+ idDetalle +'\')"><span id="etiqueta"></span>'+ 
-                                            '<span style="margin-left: 0.5em; margin-top: 0.5em;"> <i class="fa fa-user" aria-hidden="true"></i> &nbsp;&nbsp;'+ item.Contratante +'</span>'+
-                                            '<span style="margin-left: 0.5em;"> <i class="fa fa-shield" aria-hidden="true"></i> &nbsp;&nbsp;'+ item.AseguradoraNombre +'</span>'+ 
-                                            '<span style="margin-left: 0.5em;"> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp;'+ item.NroPoliza +'</span>'+
-                                            '<span style="margin-left: 0.5em;"> <i class="fa fa-area-chart" aria-hidden="true"></i> &nbsp;'+ item.Ramo +'</span></li>');
+                                            '<span style="margin-left: 0.5em; margin-top: 0.5em;"> <b>Póliza: </b>'+ item.NroPoliza +'</span>'+
+                                            '<span style="margin-left: 0.5em;"> <b>Aseguradora: </b>'+ item.AseguradoraNombre +'</span>'+ 
+                                            '<span style="margin-left: 0.5em;"> <b>Ramo: </b> '+ item.Ramo +'</span>'+
+                                            '<span style="margin-left: 0.5em;"> <b>Vigencia: </b> '+ item.vigenciaInicial +' - '+ item.vigenciaFinal +'</span></li>');
+                                            /*
+                                            '<span style="margin-left: 0.5em;"> <b>Descripción: </b> '+ item.materiaSeguro +'</li>');
+                                            */
                 });
 
                 //console.log(JSON.stringify(data)); 
@@ -77,21 +80,14 @@
                     alert("No existen datos Detalle"); 
                     window.location.href = "#polizasScreen"; 
                 }else{
-                    $("#Agencia").val(datos.GetDetallePoliza_AFFResult.Agencia);
-                    $("#AseguradoraNombre").val(datos.GetDetallePoliza_AFFResult.AseguradoraNombre);
-                    $("#Contratante").val(datos.GetDetallePoliza_AFFResult.Contratante);
-                    $("#Estado").val(datos.GetDetallePoliza_AFFResult.Estado);
-                    $("#FechaEmision").val(datos.GetDetallePoliza_AFFResult.FechaEmision);
-                    $("#MateriaSeguro").val(datos.GetDetallePoliza_AFFResult.MateriaSeguro);
-                    $("#Moneda").val(datos.GetDetallePoliza_AFFResult.Moneda);
-                    $("#NroColocacion").val(datos.GetDetallePoliza_AFFResult.NroColocacion);
                     $("#NroPoliza").val(datos.GetDetallePoliza_AFFResult.NroPoliza);
-                    $("#NroRenovacion").val(datos.GetDetallePoliza_AFFResult.NroRenovacion);
-                    $("#Porcentaje").val(datos.GetDetallePoliza_AFFResult.Porcentaje);
+                    $("#AseguradoraNombre").val(datos.GetDetallePoliza_AFFResult.AseguradoraNombre);
                     $("#Ramo").val(datos.GetDetallePoliza_AFFResult.Ramo);
-                    $("#UnidadNegocio").val(datos.GetDetallePoliza_AFFResult.UnidadNegocio);
-                    $("#vigenciaFinal").val(datos.GetDetallePoliza_AFFResult.vigenciaFinal);
-                    $("#vigenciaInicial").val(datos.GetDetallePoliza_AFFResult.vigenciaInicial);
+                    $("#Contratante").val(datos.GetDetallePoliza_AFFResult.Contratante);
+                    $("#Moneda").val(datos.GetDetallePoliza_AFFResult.Moneda);
+                    $("#vigencia").val(datos.GetDetallePoliza_AFFResult.vigenciaInicial +" - \n "+datos.GetDetallePoliza_AFFResult.vigenciaFinal);
+                    $("#MateriaSeguro").val(datos.GetDetallePoliza_AFFResult.MateriaSeguro);
+ 
                 } 
                  
             },

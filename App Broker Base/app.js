@@ -19,8 +19,8 @@
         $(function() {
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 skin: 'flat',
-                //initial: 'components/home/view.html'
-                initial: 'components/asistencia/view.html'
+                initial: 'components/home/view.html'
+                //initial: 'components/asistencia/view.html'
             });
 
             kendo.bind($('.navigation-link-text'), app.navigation.viewModel);
@@ -221,6 +221,7 @@
         // setTimeout($("#" + modal + " .primary.km-widget.km-button").attr("onclick", "closeModal('" + modal + "')"), 1500);
     }
 
+    var miLatLong;
 // START_CUSTOM_CODE_kendoUiMobileApp
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 

@@ -6,10 +6,6 @@
     });
     app.localization.registerView('home');
 
-    // START_CUSTOM_CODE_home
-    // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-
-    // END_CUSTOM_CODE_home
     (function(parent) {
         var
         /// start global model properties
@@ -59,7 +55,9 @@
 
                 $("#LoginID").val(datos.GetUsuario_AffResult.ClienteId);
                 $("#LoginDNI").val(datos.GetUsuario_AffResult.DocumentNumber);
-
+                $("#LoginDNI").val(datos.GetUsuario_AffResult.DocumentNumber);
+                $("#LoginNombre").val(datos.GetUsuario_AffResult.FirstName+" "+datos.GetUsuario_AffResult.MiddleName+" "+datos.GetUsuario_AffResult.LastName+" "+datos.GetUsuario_AffResult.LastName2);
+  
                 mostrarmenu(1);
 
                 /*
@@ -75,8 +73,8 @@
                 */
 
                 //app.navigate('components/principal/view.html');
-                //kendo.mobile.application.navigate('components/principal/view.html');
-                kendo.mobile.application.navigate('components/polizas/view.html')
+                kendo.mobile.application.navigate('components/principal/view.html');
+                //kendo.mobile.application.navigate('components/polizas/view.html')
 
                 //notificationWidget.show("Datos Obtenidos", "success");
             },
@@ -87,12 +85,10 @@
                 alert("No se Encontraron Resultados");
 
                 //notificationWidget.show("Ocurrio un problema con el Servicio", "error"); 
-                //window.location.href = "#clienteScreen"; 
-
+                //window.location.href = "#clienteScreen";  
             }
         });         
-
-
+ 
     }
 
     function mostrarmenu(id){
@@ -103,7 +99,7 @@
             $("#fun03").css("display", "block");
             $("#fun04").css("display", "block");
             $("#fun05").css("display", "block");
-            $("#fun06").css("display", "block");  
+            //$("#fun06").css("display", "block");  
             $("#fun07").css("display", "block");
         } else {
             $("#fun00").css("display", "block");
@@ -112,7 +108,7 @@
             $("#fun03").css("display", "none");
             $("#fun04").css("display", "none");
             $("#fun05").css("display", "none");
-            $("#fun06").css("display", "none"); 
+            //$("#fun06").css("display", "none"); 
             $("#fun07").css("display", "none");
             $("#LoginID").val('');
             $("#LoginDNI").val('');

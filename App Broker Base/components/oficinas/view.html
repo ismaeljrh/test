@@ -1,17 +1,39 @@
 <div data-role="view" data-title="View" data-layout="main" data-model="app.oficinas" data-show="app.oficinas.onShow" data-after-show="app.oficinas.afterShow" id="oficinasScreen" class="screen">
     <header data-role="header">
-        <div data-role="navbar" class="header-text">
-
-            <span data-bind="text: strings.oficinas.title"></span>
-
-            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
-
+        <div data-role="navbar" class="header-text cabeceras-principales"> 
+            <span data-bind="text: strings.oficinas.title"></span> 
+            <a data-role="button" href="#appDrawer" class="btn-navegacion" data-rel="drawer" data-align="left" data-icon="drawer-button"></a> 
         </div>
     </header>
 
+    <div class="oficinas">
+        <div class="oficinaslogo"><i class="fa fa-building logo-oficinas" aria-hidden="true"></i></div>
+        <div class="oficinacuerpo">
+            <span><b>Oficina Principal</b><span>
+            <span><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Agustin de la Torre 398</span>
+            <span onclick="MakeCall(012755665)"><i class="fa fa-phone" aria-hidden="true"></i> &nbsp; 278-5665</span>
+            <span><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; 9:00 am - 5:00 pm</span>
+        </div>
+    </div>
 
-    <!-- START_CUSTOM_CODE_oficinas -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <div class="oficinas">
+        <div class="oficinaslogo"><i class="fa fa-building logo-oficinas" aria-hidden="true"></i></div>
+        <div class="oficinacuerpo">
+            <span><b>Oficina San Isidro</b><span>
+            <span><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Calle Francisco Masias 370</span>
+            <span onclick="MakeCall(012110211)"><i class="fa fa-phone" aria-hidden="true"></i> &nbsp; 211-0211</span>
+            <span><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; 9:00 am - 5:00 pm</span>
+        </div>
+    </div>
 
-    <!-- END_CUSTOM_CODE_oficinas -->
+    <div class="oficinas">
+        <div class="oficinaslogo"><i class="fa fa-building logo-oficinas" aria-hidden="true"></i></div>
+        <div class="oficinacuerpo">
+            <span><b>Oficina San Borja</b><span>
+            <span><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Av San Luis 2599</span>
+            <span onclick="MakeCall(015950000)"><i class="fa fa-phone" aria-hidden="true"></i> &nbsp; 595-0000</span>
+            <span><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; 9:00 am - 6:00 pm</span>
+        </div>
+    </div>
+
 </div>
