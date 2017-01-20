@@ -2,7 +2,7 @@
   "ProjectName": "App Broker Base",
   "ProjectGuid": "371f5cc8-f132-4b1f-bafc-54ac796595cf",
   "projectVersion": 1,
-  "AppIdentifier": "com.valmar.appseguros",
+  "AppIdentifier": "com.valmar.appseguro",
   "DisplayName": "Seguros La Positiva",
   "Author": "Valmar Group",
   "Description": "Seguros La Positiva",
