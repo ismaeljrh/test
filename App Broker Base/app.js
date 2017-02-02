@@ -59,6 +59,10 @@
             }
 
             bootstrap();
+
+            //function arreglar header IOs 7
+            onDeviceReady();
+
         }, false);
     } else {
         bootstrap();
@@ -222,6 +226,14 @@
     }
 
     var miLatLong;
+
+    function onDeviceReady() {  
+        if (device.platform === 'iOS' && parseFloat(device.version) >= 7.0) {
+            console.log("IOs 7 o +");
+            document.body.style.marginTop = "20px";
+        }
+    }
+    
 // START_CUSTOM_CODE_kendoUiMobileApp
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
