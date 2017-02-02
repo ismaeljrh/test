@@ -83,10 +83,10 @@
                     $("#NroPoliza").val(datos.GetDetallePoliza_AFFResult.NroPoliza);
                     $("#AseguradoraNombre").val(datos.GetDetallePoliza_AFFResult.AseguradoraNombre);
                     $("#Ramo").val(datos.GetDetallePoliza_AFFResult.Ramo);
-                    $("#Contratante").val(datos.GetDetallePoliza_AFFResult.Contratante);
+                    $("#Contratante").val(datos.GetDetallePoliza_AFFResult.Cliente);
                     $("#Moneda").val(datos.GetDetallePoliza_AFFResult.Moneda);
                     $("#vigencia").val(datos.GetDetallePoliza_AFFResult.vigenciaInicial +" - \n "+datos.GetDetallePoliza_AFFResult.vigenciaFinal);
-                    $("#MateriaSeguro").val(datos.GetDetallePoliza_AFFResult.MateriaSeguro);
+                    $("#MateriaSeguro").val(datos.GetDetallePoliza_AFFResult.Descripcion);
  
                 } 
                  
