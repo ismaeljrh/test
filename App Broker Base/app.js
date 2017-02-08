@@ -230,8 +230,11 @@
     function onDeviceReady() {  
         if (device.platform === 'iOS' && parseFloat(device.version) >= 7.0) {
             console.log("IOs 7 o +");
-            document.body.style.marginTop = "20px";
-        }
+            document.body.style.marginTop = "20px"; 
+            var tamano = $('#kendoUiMobileApp').height();
+            tamano = tamano - 20; 
+            $('#kendoUiMobileApp').height(tamano);
+        } 
     }
     
 // START_CUSTOM_CODE_kendoUiMobileApp
