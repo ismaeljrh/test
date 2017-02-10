@@ -101,6 +101,8 @@
             $("#fun05").css("display", "block");
             //$("#fun06").css("display", "block");  
             $("#fun07").css("display", "block");
+            $("#fun08").css("display", "block");
+            $("#fun09").css("display", "block");
         } else {
             $("#fun00").css("display", "block");
             $("#fun01").css("display", "none");
@@ -110,6 +112,8 @@
             $("#fun05").css("display", "none");
             //$("#fun06").css("display", "none"); 
             $("#fun07").css("display", "none");
+            $("#fun08").css("display", "block");
+            $("#fun09").css("display", "block");
             $("#LoginID").val('');
             $("#LoginDNI").val('');
             kendo.mobile.application.navigate('components/home/view.html');

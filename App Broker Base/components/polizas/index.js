@@ -41,7 +41,7 @@
 
                     $("#listado-polizas").append('<li id="GrupoLI" style="background-color:'+ color +'" onclick="DetallePL(\''+ idDetalle +'\')"><span id="etiqueta"></span>'+ 
                                             '<span style="margin-left: 0.5em; margin-top: 0.5em;"> <b>Póliza: </b>'+ item.NroPoliza +'</span>'+
-                                            '<span style="margin-left: 0.5em;"> <b>Aseguradora: </b>'+ item.AseguradoraNombre +'</span>'+ 
+                                            /* '<span style="margin-left: 0.5em;"> <b>Aseguradora: </b>'+ item.AseguradoraNombre +'</span>'+ */
                                             '<span style="margin-left: 0.5em;"> <b>Ramo: </b> '+ item.Ramo +'</span>'+
                                             '<span style="margin-left: 0.5em;"> <b>Vigencia: </b> '+ item.vigenciaInicial +' - '+ item.vigenciaFinal +'</span></li>');
                                             /*
@@ -81,7 +81,7 @@
                     window.location.href = "#polizasScreen"; 
                 }else{
                     $("#NroPoliza").val(datos.GetDetallePoliza_AFFResult.NroPoliza);
-                    $("#AseguradoraNombre").val(datos.GetDetallePoliza_AFFResult.AseguradoraNombre);
+                    //$("#AseguradoraNombre").val(datos.GetDetallePoliza_AFFResult.AseguradoraNombre);
                     $("#Ramo").val(datos.GetDetallePoliza_AFFResult.Ramo);
                     $("#Contratante").val(datos.GetDetallePoliza_AFFResult.Cliente);
                     $("#Moneda").val(datos.GetDetallePoliza_AFFResult.Moneda);

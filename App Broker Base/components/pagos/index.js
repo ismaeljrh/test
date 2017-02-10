@@ -68,7 +68,7 @@
                     $("#listado-primas").append('<li id="GrupoLI" style="background-color:'+ color + '" ><span id="etiqueta"></span>'+ 
                                             '<span style="margin-left: 0.5em; margin-top: 0.5em;"> <b>Documento: </b> &nbsp;'+ NroDocumento +'</span>'+
                                             '<span style="margin-left: 0.5em;"> <b>Póliza: </b> &nbsp;'+ Poliza +'</span>'+ 
-                                            '<span style="margin-left: 0.5em;"> <b>Aseguradora: </b> &nbsp;'+ Aseguradora +'</span>'+
+                                            /* '<span style="margin-left: 0.5em;"> <b>Aseguradora: </b> &nbsp;'+ Aseguradora +'</span>'+ */
                                             '<span style="margin-left: 0.5em;"> <b>Ramo: </b> &nbsp;'+ Ramo +'</span>'+
                                             '<span style="margin-left: 0.5em;"> <b>Prima Total: </b> &nbsp;'+ SimboloMoneda +' '+ PrimaTotal +'</span>'+
                                             '<span style="margin-left: 0.5em;  width:75% !important;"> <b>Vencimiento: </b> &nbsp;'+ Vencimiento +'</span> <span style="background-color:'+ bkcolor +'; width: 5% !important; height: 1em !important; border-radius: 1em !important;" ></span></li>');
